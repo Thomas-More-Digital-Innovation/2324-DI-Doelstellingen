@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAAM | Doelstellingen</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="author" content="NAAM">
+    <meta name="description" content="Doelstellingen voor Thomas More Geel - Digital Innovation">
+    <script src="tailwind.js"></script>
+    <script src="doelstellingen.js"></script>
+    <script src="tailwind.config.js"></script>
+  </head>
+
+  <body>
+    <div class="flex justify-center items-center flex-col">
+      <h1 class="text-3xl font-bold underline">NAAM - Doelstellingen</h1>
+      <div class="flex gap-6 pt-6">
+        <div
+          class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5">
+          <p>Richting:</p>
+          <select id="richtingen" class="bg-transparent"></select>
+        </div>
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="search"
+            class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50"
+            placeholder="Zoek voor doelstellingen">
+        </div>
+        <div
+          class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5">
+          <p>Status:</p>
+          <select id="states" class="bg-transparent"></select>
+        </div>
+      </div>
+    </div>
+    <div class="flex relative overflow-x-auto shadow-md rounded-lg my-6 mx-4">
+      <table class="w-full text-sm text-left text-gray-500 table-fixed">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr class="text-center">
+            <th class="w-1/4 px-6 py-3 text-left">Doelstelling</th>
+            <th class="px-6 py-3">Richting</th>
+            <th class="px-6 py-3">Status</th>
+            <th class="px-6 py-3">Verified</th>
+            <th class="px-6 py-3">OPO/Project</th>
+            <th class="px-6 py-3">Bewijs</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+      </table>
+    </div>
+    <div id="model" class="hidden fixed justify-center items-center bg-black/50 w-full h-full z-10 top-0">
+      <div class="bg-white p-6 rounded-lg relative w-2/4">
+        <div class="flex justify-center items-center flex-col flex-wrap">
+          <h1 class="text-2xl font-bold underline">Bewijs</h1>
+          <button onclick="closeModel()"
+            class="absolute font-bold text-red-500 right-1 top-1 px-2 py-1 rounded-lg text-xl">X</button>
+          <p id="modelText" class="w-full break-all pt-6"></p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+
+</html>
