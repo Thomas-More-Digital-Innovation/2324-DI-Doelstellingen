@@ -56,6 +56,7 @@
   git push
   ```
 - **De website komt automatisch online m.b.v GitHub Actions tussen de 1 en 3 minuten.**
+  - Deze zal op [https://<YOUR_NAME>.github.io/<REPO_NAME>/]() online komen.
 
 ---
 
