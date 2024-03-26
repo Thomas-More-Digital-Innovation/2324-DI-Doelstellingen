@@ -1,14 +1,7 @@
 > Inhouds Tafel
 
-- [Installatie](#installatie)
-  \- [Stap 1 - Copy Repository](#stap-1---copy-repository)
-  \- [Stap 2 - Copy Repository](#stap-2---copy-repository)
-  \- [Stap 3 - Create base folder \& clone repo](#stap-3---create-base-folder--clone-repo)
-  \- [Stap 5 - Verander naam](#stap-5---verander-naam)
-  \- [Stap 6 - Upload de updates naar github](#stap-6---upload-de-updates-naar-github)
-- [Updates](#updates)
-  \- [Doelstellingen aanpassen](#doelstellingen-aanpassen)
-  \- [Doelstelling verifiëren (Coaches)](#doelstelling-verifiëren-coaches)
+- [Installatie](#installatie) - [Stap 1 - Copy Repository](#stap-1---copy-repository) - [Stap 2 - Copy Repository](#stap-2---copy-repository) - [Stap 3 - Enable Actions](#stap-3---enable-actions) - [Stap 4 - Create base folder \& clone repo](#stap-4---create-base-folder--clone-repo) - [Stap 5 - Verander naam](#stap-5---verander-naam) - [Stap 6 - Upload de updates naar github](#stap-6---upload-de-updates-naar-github)
+- [Updates](#updates) - [Doelstellingen aanpassen](#doelstellingen-aanpassen) - [Doelstelling verifiëren (Coaches)](#doelstelling-verifiëren-coaches)
 
 ---
 
@@ -30,7 +23,14 @@
 - 4 - Klik op `Begin import`.
 - ![copy repo](assets/README/copyRepo.png)
 
-#### Stap 3 - Create base folder & clone repo
+#### Stap 3 - Enable Actions
+
+- Ga naar de `Settings` van je repository.
+- Ga naar `Actions` &rarr; `General` in het linkse menu.
+- Onder `Actions Permissions` kies voor `Allow all actions and reusable workflows`
+  ![enable actions](assets/README/enableActions.png)
+
+#### Stap 4 - Create base folder & clone repo
 
 - Maak een folder op je computer met dezelfde naam als je GitHub repository
 - Ga naar deze folder in je CMD en clone de repository die je net hebt gemaakt.
