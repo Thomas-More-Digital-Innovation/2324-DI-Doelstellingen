@@ -23,13 +23,16 @@
 - 4 - Klik op `Begin import`.
 - ![copy repo](assets/README/copyRepo.png)
 
-#### Stap 3 - Enable Actions
+#### Stap 3 - Enable Actions & Pages
 
 - Ga naar de `Settings` van je repository.
 - Ga naar `Actions` &rarr; `General` in het linkse menu.
 - Onder `Actions Permissions` kies voor `Allow all actions and reusable workflows`
 - Klik op `Save`.
   ![enable actions](assets/README/enableActions.png)
+- Ga naar `Pages` in het linkse menu.
+- Onder `Build and Deployment` verander de source van `Deploy from a branch` naar `Github Actions`.
+- ![enable pages](assets/README/enablePages.png)
 
 #### Stap 4 - Create base folder & clone repo
 
