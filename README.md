@@ -28,6 +28,7 @@
 - Ga naar de `Settings` van je repository.
 - Ga naar `Actions` &rarr; `General` in het linkse menu.
 - Onder `Actions Permissions` kies voor `Allow all actions and reusable workflows`
+- Klik op `Save`.
   ![enable actions](assets/README/enableActions.png)
 
 #### Stap 4 - Create base folder & clone repo
