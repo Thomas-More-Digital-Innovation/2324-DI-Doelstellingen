@@ -17,7 +17,7 @@
 
 #### Stap 2 - Copy Repository
 
-- 1 - Vul de link die je net gecopieerd hebt in.
+- 1 - Vul de link die je net gekopieerd hebt in.
 - 2 - Vul een repository naam in. (bv. `Doelstellingen`)
 - 3 - Maak de repository `Private`. (Optional)
 - 4 - Klik op `Begin import`.
@@ -45,7 +45,7 @@
 #### Stap 6 - Upload de updates naar github
 
 - Open de folder in CMD.
-- Voer de updates door naar GitHub met deze commandos.
+- Voer de updates door naar GitHub met deze commando's.
   ```bash
   git add .
   git commit -m "<MESSAGE>"
@@ -75,7 +75,7 @@
      - Je kan ook links bijvoegen m.b.v een `<a href="<BESTAND_OF_LINK>" target="_blank"><Tekst></a>`
        - `<Tekst>` &rarr; De inhoud dat je wilt laten zien.
        - `<BESTAND_OF_LINK>` &rarr; Link of bestand dat er achter zit.
-     - Als je een PDF of een ander bestand wilt toevoegen is het best om in de [assets](assets) folder een extra folder te maken met als naam de doelstelling nummer. Zo houden we het overzichtelijk om alles bij te houden.
+     - Als je een pdf of een ander bestand wilt toevoegen is het best om in de [assets](assets) folder een extra folder te maken met als naam de doelstelling nummer. Zo houden we het overzichtelijk om alles bij te houden.
        ![assetsFolder](assets/README/assetsFolder.png)
    - **Link voorbeeld:** `<a href="assets/1.4" target="_blank">1.4</a>`
      - Dit is een link naar de `1.4` folder onder de `assets`.
