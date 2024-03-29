@@ -60,12 +60,12 @@
       </table>
     </div>
     <div id="model" class="hidden fixed justify-center items-center bg-black/50 w-full h-full z-10 top-0">
-      <div class="bg-white p-6 rounded-lg relative w-2/4">
+      <div class="bg-white p-6 rounded-lg relative w-2/4 max-h-[75%] overflow-y-auto">
         <div class="flex justify-center items-center flex-col flex-wrap">
           <h1 class="text-2xl font-bold underline">Bewijs</h1>
           <button onclick="closeModel()"
             class="absolute font-bold text-red-500 right-1 top-1 px-2 py-1 rounded-lg text-xl">X</button>
-          <p id="modelText" class="w-full break-all pt-6"></p>
+          <p id="modelText" class="w-full break-words pt-6"></p>
         </div>
       </div>
     </div>
