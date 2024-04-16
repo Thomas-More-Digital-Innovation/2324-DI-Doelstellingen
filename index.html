@@ -11,11 +11,15 @@
     <script src="tailwind.js"></script>
     <script src="doelstellingen.js"></script>
     <script src="tailwind.config.js"></script>
+    <script src="chart.js"></script>
+    <script src="chartjs-plugin-datalabels.js"></script>
   </head>
 
   <body>
+    <canvas id="chart" height="200" class="absolute ml-6"></canvas>
     <div class="flex justify-center items-center flex-col">
-      <h1 class="text-3xl font-bold underline">NAAM - Doelstellingen</h1>
+      <h1 class="text-3xl font-bold underline pt-24">NAAM - Doelstellingen</h1>
+      <p id="counters" class=""></p>
       <div class="flex gap-6 pt-6">
         <div
           class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5">
