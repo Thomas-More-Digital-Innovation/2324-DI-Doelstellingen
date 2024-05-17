@@ -89,6 +89,7 @@ function generate() {
     }
   }
   r.sort();  
+  const total = countDone + countInProgress + countTodo;
   const data = {
     labels: [
       'Todo',
@@ -122,7 +123,7 @@ function generate() {
         },
         title: {
           display: true,
-          text: `Doelstellingen Status (${Math.round((((countDone/countTodo)*100) + Number.EPSILON) * 100) / 100}%)`,
+          text: `Doelstellingen Status (${Math.round((((countDone/total)*100) + Number.EPSILON) * 100) / 100}%)`,
         }
       },
       layout: {
