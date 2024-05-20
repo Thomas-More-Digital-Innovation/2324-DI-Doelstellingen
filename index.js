@@ -16,6 +16,7 @@ const counters = document.getElementById("counters");
 window.onload = () => { generate(); };
 
 window.onkeyup = (e) => { if (e.key == "Escape") closeModel() };
+model.onclick = (e) => { if (e.target == model) closeModel() };
 
 search.oninput = checkFilters;
 richtingenSelect.onchange = checkFilters;
