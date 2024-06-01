@@ -1,6 +1,6 @@
 > Inhouds Tafel
 
-- [Installatie](#installatie) - [Stap 1 - Copy Repository](#stap-1---copy-repository) - [Stap 2 - Copy Repository](#stap-2---copy-repository) - [Stap 3 - Enable Actions](#stap-3---enable-actions) - [Stap 4 - Create base folder \& clone repo](#stap-4---create-base-folder--clone-repo) - [Stap 5 - Verander naam](#stap-5---verander-naam) - [Stap 6 - Upload de updates naar github](#stap-6---upload-de-updates-naar-github)
+- [Installatie](#installatie) - [Stap 1 - Copy Repository](#stap-1---copy-repository) - [Stap 2 - Copy Repository](#stap-2---copy-repository) - [Stap 3 - Enable Actions \& Pages](#stap-3---enable-actions--pages) - [Stap 4 - Create base folder \& clone repo](#stap-4---create-base-folder--clone-repo) - [Stap 5 - Verander naam](#stap-5---verander-naam) - [Stap 6 - Upload de updates naar github](#stap-6---upload-de-updates-naar-github) - [Stap 7 - Zet de github pages link in de about.](#stap-7---zet-de-github-pages-link-in-de-about)
 - [Updates](#updates) - [Doelstellingen aanpassen](#doelstellingen-aanpassen) - [Doelstelling verifiëren (Coaches)](#doelstelling-verifiëren-coaches)
 
 ---
@@ -55,8 +55,17 @@
   git commit -m "<MESSAGE>"
   git push
   ```
-- **De website komt automatisch online m.b.v GitHub Actions tussen de 1 en 3 minuten.**
-  - Deze zal op [https://<YOUR_NAME>.github.io/<REPO_NAME>/]() online komen.
+- **De website komt automatisch online m.b.v GitHub Actions tussen de 1 en 5 minuten.**
+  - Deze zal op [https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/]() online komen.
+
+#### Stap 7 - Zet de github pages link in de about.
+
+- Ga naar de home pagina van je repository.
+- Klik op het tandwiel om de about aan te passen
+  ![homePage](assets/README/aboutMe.png)
+- 1 - Duid aan: `Use your GitHub Pages website`.
+- 2 - Klik op `Save changes`.
+  ![editAboutMe](assets/README/editAboutMe.png)
 
 ---
 
@@ -66,24 +75,66 @@
 
 1. Ga naar de [doelstellingen.js](doelstellingen.js) en zoek de doelstelling die je wilt aanpassen.
 2. Verander de volgende gegevens:
+
    ```json
    "status": "", -- Zie verschillende statussen hieronder
    "verified": "", -- ALLEEN VOOR COACHES
    "project": "", -- Project of vak
    "bewijs": "" -- Tekst met bewijs van de behaalde doelstelling, meer info hieronder
    ```
+
    - status:
      - td &rarr; To Do
      - ip &rarr; In Progress
      - d &rarr; Done
    - bewijs:
-     - Je kan ook links bijvoegen m.b.v een `<a href="<BESTAND_OF_LINK>" target="_blank"><Tekst></a>`
+     - Je kan ook links bijvoegen m.b.v een `<a href='<BESTAND_OF_LINK>' target='_blank'><Tekst></a>`
        - `<Tekst>` &rarr; De inhoud dat je wilt laten zien.
        - `<BESTAND_OF_LINK>` &rarr; Link of bestand dat er achter zit.
      - Als je een pdf of een ander bestand wilt toevoegen is het best om in de [assets](assets) folder een extra folder te maken met als naam de doelstelling nummer. Zo houden we het overzichtelijk om alles bij te houden.
        ![assetsFolder](assets/README/assetsFolder.png)
-   - **Link voorbeeld:** `<a href="assets/1.4" target="_blank">1.4</a>`
-     - Dit is een link naar de `1.4` folder onder de `assets`.
+       - Als je een accordion wilt hebben voor meer overzicht in het bewijs kun je deze functie gebruiken: `makeAccordion()`. Meer info bij het voorbeeld.
+         ![accordion](assets/README/accordion.png)
+   - **Link voorbeeld:** `<a href='assets/1.4/bewijs.pdf' target='_blank'>1.4</a>`
+     - Dit is een link naar `bewijs.pdf` onder de `assets`.
+   - **Accordion voorbeeld:**
+
+     - Maak een nieuwe `const` variabel aan in de [accordion.js](accordion.js) file zoals hieronder.
+        <details><summary>Open const</summary>
+
+       ```js
+       const projectInfo = {
+         title: "TITEL",
+         text: `
+           <div class='flex flex-col py-2'>
+             <h2 class='text-lg font-bold'>Opdrachtgever</h2>
+             <p>NAAM</p>
+           </div>
+           <div class='flex flex-col py-2'>
+             <h2 class='text-lg font-bold'>Projectomschrijving</h2>
+             <p>OMSCHRIJVING</p>
+           </div>
+           <div class='flex flex-col py-2'>
+             <h2 class='text-lg font-bold'>Projectduur</h2>
+             <p>September 2023 &rarr; Mei 2024</p>
+           </div>
+           <div class='flex flex-col py-2'>
+             <h2 class='text-lg font-bold'>Links</h2>
+             <p>Github Repository: REPO LINK</p>
+           </div>
+         `,
+       };
+       ```
+
+        </details>
+
+     - Nu kun je dit gebruiken in een bewijs.
+     - bv:
+       ```js
+       bewijs: `${makeAccordion(projectInfo)} Andere tekst erna..`;
+       ```
+     - Hier kun je ook nog altijd links of fotos aan toevoegen via HTML code.
+
 3. Voer de updates door naar GitHub.
    ```bash
    git add .
@@ -98,7 +149,7 @@
   ![edit doelstellingen](assets/README/editDoelstellingen.png)
 - Klik op ![edit icon](assets/README/editIcon.png).
   ![edit button](assets/README/editButton.png)
-- Zoek de doelstelling (CTRL+F5 werkt ook).
+- Zoek de doelstelling (CTRL+F werkt ook).
 - Voer je naam in bij `"verified": "",`.
 - Klik op `Commit Changes...`.
   ![commit changes](assets/README/commitChanges.png)
