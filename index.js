@@ -68,11 +68,12 @@ function generate() {
       let color = "";
       if (states[d["status"]]) {
         status = states[d["status"]]["label"];
-        if (d["status"] == "d") countDone++;
+        if (d["status"] == "d" && d["verified"] != "") countDone++;
         if (d["status"] == "ip") countInProgress++;
         if (d["status"] == "td") countTodo++;
         if (d["verified"] != "") countVerified++;
         color = states[d["status"]]["color"] || "odd:bg-white even:bg-gray-50 hover:bg-gray-100";
+        if (d["status"] == "d" && d["verified"] != "") {color = "odd:bg-[#94b3ed]/30 even:bg-[#94b3ed]/40 hover:bg-[#94b3ed]/50 text-black"}
       };
       for (const [e, f] of Object.entries(d["type"])) {
         if (!r.includes(f.toUpperCase())) r = [...r, f.toUpperCase()];
@@ -92,7 +93,8 @@ function generate() {
     }
   }
   r.sort();
-  const total = countDone + countInProgress + countTodo;
+  const total = countDone + countInProgress + countTodo + countVerified;
+  const done = countDone + countVerified;
   const data = {
     labels: [
       'Todo',
@@ -128,7 +130,7 @@ function generate() {
         },
         title: {
           display: true,
-          text: `Doelstellingen Status (Done: ${calc(countDone, total)}%, Verified: ${calc(countVerified, total)}%)`,
+          text: `Doelstellingen Status (Done: ${calc(done, total)}%, Verified: ${calc(countVerified, total)}%)`,
         }
       },
       layout: {
@@ -140,6 +142,7 @@ function generate() {
   Chart.register(ChartDataLabels);
   new Chart(ctx, config);
   for (const v of r) { v == "ALLES" ? richtingenSelect.innerHTML += `<option value="${v}" selected>${v}</option>` : richtingenSelect.innerHTML += `<option value="${v}">${v}</option>`; }
+  checkFilters();
 }
 
 function calc(type, max) {
