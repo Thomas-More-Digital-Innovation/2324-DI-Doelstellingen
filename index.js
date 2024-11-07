@@ -68,10 +68,10 @@ function generate() {
       let color = "";
       if (states[d["status"]]) {
         status = states[d["status"]]["label"];
-        if (d["status"] == "d" && d["verified"] != "") countDone++;
+        if (d["status"] == "d" && d["verified"] == "") countDone++;
         if (d["status"] == "ip") countInProgress++;
         if (d["status"] == "td") countTodo++;
-        if (d["verified"] != "") countVerified++;
+        if (d["verified"] != "" && d["status"] != "ip") countVerified++;
         color = states[d["status"]]["color"] || "odd:bg-white even:bg-gray-50 hover:bg-gray-100";
         if (d["status"] == "d" && d["verified"] != "") {color = "odd:bg-[#94b3ed]/30 even:bg-[#94b3ed]/40 hover:bg-[#94b3ed]/50 text-black"}
       };
