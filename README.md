@@ -1,122 +1,122 @@
-> Inhouds Tafel
+> Table of Contents
 
-- [Installatie](#installatie) - [Stap 1 - Copy Repository](#stap-1---copy-repository) - [Stap 2 - Copy Repository](#stap-2---copy-repository) - [Stap 3 - Enable Actions \& Pages](#stap-3---enable-actions--pages) - [Stap 4 - Create base folder \& clone repo](#stap-4---create-base-folder--clone-repo) - [Stap 5 - Verander naam](#stap-5---verander-naam) - [Stap 6 - Upload de updates naar github](#stap-6---upload-de-updates-naar-github) - [Stap 7 - Zet de github pages link in de about.](#stap-7---zet-de-github-pages-link-in-de-about)
-- [Updates](#updates) - [Doelstellingen aanpassen](#doelstellingen-aanpassen) - [Doelstelling verifiëren (Coaches)](#doelstelling-verifiëren-coaches)
+- [Installation](#installation) - [Step 1 - Copy Repository](#step-1---copy-repository) - [Step 2 - Copy Repository](#step-2---copy-repository) - [Step 3 - Enable Actions \& Pages](#step-3---enable-actions--pages) - [Step 4 - Create base folder \& clone repo](#step-4---create-base-folder--clone-repo) - [Step 5 - Change name](#step-5---change-name) - [Step 6 - Upload updates to GitHub](#step-6---upload-updates-to-github) - [Step 7 - Set the GitHub pages link in the about section](#step-7---set-the-github-pages-link-in-the-about-section)
+- [Updates](#updates) - [Modify Learning Goals](#modify-learning-goals) - [Verify Learning Goal (Coaches)](#verify-learning-goal-coaches)
 
 ---
 
-# Installatie
+# Installation
 
-#### Stap 1 - Copy Repository
+#### Step 1 - Copy Repository
 
-- Copy de code url van de [basis repository](https://github.com/Thomas-More-Digital-Innovation/2324-DI-Doelstellingen).
+- Copy the code URL of the [base repository](https://github.com/Thomas-More-Digital-Innovation/2324-DI-Doelstellingen).
   - [https://github.com/Thomas-More-Digital-Innovation/2324-DI-Doelstellingen.git]()
-- Klik op de `+` rechts boven &rarr; `Import Repository`
-  - Of klik [hier](https://github.com/new/import) om naar de link te gaan.
+- Click on the `+` at the top right &rarr; `Import Repository`
+  - Or click [here](https://github.com/new/import) to go to the link.
 - ![import repo](assets/README/importRepo.png)`
 
-#### Stap 2 - Copy Repository
+#### Step 2 - Copy Repository
 
-- 1 - Vul de link die je net gekopieerd hebt in.
-- 2 - Vul een repository naam in. (bv. `Doelstellingen`)
-- 3 - Maak de repository `Private`. (Optional)
-- 4 - Klik op `Begin import`.
+- 1 - Enter the link you just copied.
+- 2 - Enter a repository name. (e.g. `LearningGoals`)
+- 3 - Make the repository `Private`. (Optional)
+- 4 - Click on `Begin import`.
 - ![copy repo](assets/README/copyRepo.png)
 
-#### Stap 3 - Enable Actions & Pages
+#### Step 3 - Enable Actions & Pages
 
-- Ga naar de `Settings` van je repository.
-- Ga naar `Actions` &rarr; `General` in het linkse menu.
-- Onder `Actions Permissions` kies voor `Allow all actions and reusable workflows`
-- Klik op `Save`.
+- Go to the `Settings` of your repository.
+- Go to `Actions` &rarr; `General` in the left menu.
+- Under `Actions Permissions` choose `Allow all actions and reusable workflows`
+- Click on `Save`.
   ![enable actions](assets/README/enableActions.png)
-- Ga naar `Pages` in het linkse menu.
-- Onder `Build and Deployment` verander de source van `Deploy from a branch` naar `Github Actions`.
+- Go to `Pages` in the left menu.
+- Under `Build and Deployment` change the source from `Deploy from a branch` to `Github Actions`.
 - ![enable pages](assets/README/enablePages.png)
 
-#### Stap 4 - Create base folder & clone repo
+#### Step 4 - Create base folder & clone repo
 
-- Maak een folder op je computer met dezelfde naam als je GitHub repository
-- Ga naar deze folder in je CMD en clone de repository die je net hebt gemaakt.
+- Create a folder on your computer with the same name as your GitHub repository
+- Go to this folder in your CMD and clone the repository you just created.
   ```bash
   git clone <REPO_LINK> .
   ```
 
-#### Stap 5 - Verander naam
+#### Step 5 - Change name
 
-- In de [index.html](index.html) vervang je `NAAM` overal met je eigen naam.
+- In the [index.html](index.html) replace `[Name Here]` everywhere with your own name.
 
-#### Stap 6 - Upload de updates naar github
+#### Step 6 - Upload updates to GitHub
 
-- Open de folder in CMD.
-- Voer de updates door naar GitHub met deze commando's.
+- Open the folder in CMD.
+- Push the updates to GitHub with these commands.
   ```bash
   git add .
   git commit -m "<MESSAGE>"
   git push
   ```
-- **De website komt automatisch online m.b.v GitHub Actions tussen de 1 en 5 minuten.**
-  - Deze zal op [https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/]() online komen.
+- **The website will automatically go online using GitHub Actions within 1 to 5 minutes.**
+  - It will be available at [https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/]().
 
-#### Stap 7 - Zet de github pages link in de about.
+#### Step 7 - Set the GitHub pages link in the about section
 
-- Ga naar de home pagina van je repository.
-- Klik op het tandwiel om de about aan te passen
+- Go to the home page of your repository.
+- Click on the gear icon to edit the about section
   ![homePage](assets/README/aboutMe.png)
-- 1 - Duid aan: `Use your GitHub Pages website`.
-- 2 - Klik op `Save changes`.
+- 1 - Check: `Use your GitHub Pages website`.
+- 2 - Click on `Save changes`.
   ![editAboutMe](assets/README/editAboutMe.png)
 
 ---
 
 # Updates
 
-#### Doelstellingen aanpassen
+#### Modify Learning Goals
 
-1. Ga naar de [doelstellingen.js](doelstellingen.js) en zoek de doelstelling die je wilt aanpassen.
-2. Verander de volgende gegevens:
+1. Go to [doelstellingen.js](doelstellingen.js) and find the learning goal you want to modify.
+2. Change the following information:
 
    ```json
-   "status": "", -- Zie verschillende statussen hieronder
-   "verified": "", -- ALLEEN VOOR COACHES
-   "project": "", -- Project of vak
-   "bewijs": "" -- Tekst met bewijs van de behaalde doelstelling, meer info hieronder
+   "status": "", -- See different statuses below
+   "verified": "", -- ONLY FOR COACHES
+   "project": "", -- Project or course
+   "bewijs": "" -- Text with evidence of the achieved learning goal, more info below
    ```
 
    - status:
      - td &rarr; To Do
      - ip &rarr; In Progress
      - d &rarr; Done
-   - bewijs:
-     - Je kan ook links bijvoegen m.b.v een `<a href='<BESTAND_OF_LINK>' target='_blank'><Tekst></a>`
-       - `<Tekst>` &rarr; De inhoud dat je wilt laten zien.
-       - `<BESTAND_OF_LINK>` &rarr; Link of bestand dat er achter zit.
-     - Als je een pdf of een ander bestand wilt toevoegen is het best om in de [assets](assets) folder een extra folder te maken met als naam de doelstelling nummer. Zo houden we het overzichtelijk om alles bij te houden.
+   - bewijs (evidence):
+     - You can also add links using `<a href='<FILE_OR_LINK>' target='_blank'><Text></a>`
+       - `<Text>` &rarr; The content you want to display.
+       - `<FILE_OR_LINK>` &rarr; Link or file behind it.
+     - If you want to add a PDF or another file, it's best to create an extra folder in the [assets](assets) folder with the learning goal number as its name. This keeps everything organized.
        ![assetsFolder](assets/README/assetsFolder.png)
-       - Als je een accordion wilt hebben voor meer overzicht in het bewijs kun je deze functie gebruiken: `makeAccordion()`. Meer info bij het voorbeeld.
+       - If you want an accordion for more overview in the evidence, you can use this function: `makeAccordion()`. More info in the example.
          ![accordion](assets/README/accordion.png)
-   - **Link voorbeeld:** `<a href='assets/1.4/bewijs.pdf' target='_blank'>1.4</a>`
-     - Dit is een link naar `bewijs.pdf` onder de `assets`.
-   - **Accordion voorbeeld:**
+   - **Link example:** `<a href='assets/1.4/bewijs.pdf' target='_blank'>1.4</a>`
+     - This is a link to `bewijs.pdf` under `assets`.
+   - **Accordion example:**
 
-     - Maak een nieuwe `const` variabel aan in de [accordion.js](accordion.js) file zoals hieronder.
+     - Create a new `const` variable in the [accordion.js](accordion.js) file like below.
         <details><summary>Open const</summary>
 
        ```js
        const projectInfo = {
-         title: "TITEL",
+         title: "TITLE",
          text: `
            <div class='flex flex-col py-2'>
-             <h2 class='text-lg font-bold'>Opdrachtgever</h2>
-             <p>NAAM</p>
+             <h2 class='text-lg font-bold'>Client</h2>
+             <p>NAME</p>
            </div>
            <div class='flex flex-col py-2'>
-             <h2 class='text-lg font-bold'>Projectomschrijving</h2>
-             <p>OMSCHRIJVING</p>
+             <h2 class='text-lg font-bold'>Project Description</h2>
+             <p>DESCRIPTION</p>
            </div>
            <div class='flex flex-col py-2'>
-             <h2 class='text-lg font-bold'>Projectduur</h2>
-             <p>September 2023 &rarr; Mei 2024</p>
+             <h2 class='text-lg font-bold'>Project Duration</h2>
+             <p>September 2023 &rarr; May 2024</p>
            </div>
            <div class='flex flex-col py-2'>
              <h2 class='text-lg font-bold'>Links</h2>
@@ -128,33 +128,33 @@
 
         </details>
 
-     - Nu kun je dit gebruiken in een bewijs.
-     - bv:
+     - Now you can use this in evidence.
+     - e.g.:
        ```js
-       bewijs: `${makeAccordion(projectInfo)} Andere tekst erna..`;
+       bewijs: `${makeAccordion(projectInfo)} Other text afterwards..`;
        ```
-     - Hier kun je ook nog altijd links of fotos aan toevoegen via HTML code.
+     - You can still add links or photos via HTML code.
 
-3. Voer de updates door naar GitHub.
+3. Push the updates to GitHub.
    ```bash
    git add .
    git commit -m "<MESSAGE>"
    git push
    ```
-4. Na 1 - 3 minuten wordt de pages automatisch aangepast.
+4. After 1 - 3 minutes, the pages will be automatically updated.
 
-#### Doelstelling verifiëren (Coaches)
+#### Verify Learning Goal (Coaches)
 
-- Open de doelstellingen file op GitHub.
+- Open the doelstellingen file on GitHub.
   ![edit doelstellingen](assets/README/editDoelstellingen.png)
-- Klik op ![edit icon](assets/README/editIcon.png).
+- Click on ![edit icon](assets/README/editIcon.png).
   ![edit button](assets/README/editButton.png)
-- Zoek de doelstelling (CTRL+F werkt ook).
-- Voer je naam in bij `"verified": "",`.
-- Klik op `Commit Changes...`.
+- Find the learning goal (CTRL+F also works).
+- Enter your name at `"verified": "",`.
+- Click on `Commit Changes...`.
   ![commit changes](assets/README/commitChanges.png)
-- 1 - Voer een commit message in.
-- 2 - Voer een beschrijving in. (Optional)
-- 3 - Klik op `Commit changes`.
+- 1 - Enter a commit message.
+- 2 - Enter a description. (Optional)
+- 3 - Click on `Commit changes`.
   ![commit changes popup](assets/README/commitPopup.png)
-- De GitHub pages wordt automatisch aangepast binnen de 1 - 5 minuten.
+- The GitHub pages will be automatically updated within 1 - 5 minutes.

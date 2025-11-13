@@ -4,75 +4,104 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAAM | Doelstellingen</title>
+    <title>[Name Here] | Learning Goals</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="author" content="NAAM">
-    <meta name="description" content="Doelstellingen voor Thomas More Geel - Digital Innovation">
+    <meta name="author" content="Yme Clonen">
+    <meta name="description" content="Learning Goals for Thomas More Geel - Digital Innovation">
     <script src="tailwind.js"></script>
     <script src="accordion.js"></script>
     <script src="doelstellingen.js"></script>
     <script src="tailwind.config.js"></script>
     <script src="chart.js"></script>
     <script src="chartjs-plugin-datalabels.js"></script>
+    <style>
+      .category-icon {
+        transition: transform 0.3s ease;
+      }
+      .rotate-180 {
+        transform: rotate(-180deg);
+      }
+    </style>
   </head>
 
-  <body>
-    <canvas id="chart" height="200" class="absolute ml-6 scale-50 lg:scale-100"></canvas>
-    <div class="flex justify-center items-center flex-col">
-      <h1 class="text-3xl font-bold underline pt-24">NAAM - Doelstellingen</h1>
-      <div class="flex gap-6 pt-6">
-        <div
-          class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5">
-          <p>Richting:</p>
-          <select id="richtingen" class="bg-transparent"></select>
-        </div>
-        <div class="relative">
-          <div class="absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                clip-rule="evenodd"></path>
-            </svg>
+  <body class="bg-white pb-8">
+    <div class="px-8">
+      <canvas id="chart" height="200" class="absolute ml-6 scale-50 lg:scale-100"></canvas>
+      
+      <!-- Header Section -->
+      <div class="bg-gray-100 border border-black/10 rounded-2xl shadow-xl p-8 my-8 mx-4 lg:mx-auto">
+        <div class="flex justify-center items-center flex-col">
+          <div class="inline-block">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#00293F] mb-2">[Name Here]</h1>
+            <div class="h-1 bg-[#FA6432] rounded-full"></div>
           </div>
-          <input type="text" id="search"
-            class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50"
-            placeholder="Zoek voor doelstellingen">
+          <p class="text-lg text-gray-600 mt-4">Learning Goals Portfolio</p>
         </div>
-        <div
-          class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5">
-          <p>Status:</p>
-          <select id="states" class="bg-transparent"></select>
+        
+        <!-- Filter Controls -->
+        <div class="flex flex-wrap gap-4 pt-8 justify-center">
+          <div class="bg-white border-2 border-gray-200 hover:border-[#FA6432] hover:shadow-lg hover:shadow-[#FA6432]/20 transition-all duration-300 inline-flex items-center text-[#00293F] font-medium rounded-lg text-sm px-4 py-2.5 gap-2">
+            <p class="font-semibold">Track:</p>
+            <select id="richtingen" class="bg-transparent text-[#00293F] font-medium focus:outline-none cursor-pointer"></select>
+          </div>
+          
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-5 h-5 text-[#FA6432]" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input type="text" id="search"
+              class="bg-white border-2 border-gray-200 hover:border-[#FA6432] hover:shadow-lg hover:shadow-[#FA6432]/20 transition-all duration-300 block p-2.5 ps-10 text-sm text-[#00293F] rounded-lg w-80 focus:outline-none focus:ring-2 focus:ring-[#FA6432] focus:border-[#FA6432]"
+              placeholder="Search for learning goals">
+          </div>
+          
+          <div class="bg-white border-2 border-gray-200 hover:border-[#FA6432] hover:shadow-lg hover:shadow-[#FA6432]/20 transition-all duration-300 inline-flex items-center text-[#00293F] font-medium rounded-lg text-sm px-4 py-2.5 gap-2">
+            <p class="font-semibold">Status:</p>
+            <select id="states" class="bg-transparent text-[#00293F] font-medium focus:outline-none cursor-pointer"></select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="flex relative overflow-x-auto shadow-md rounded-lg my-6 mx-4">
-      <table class="w-full text-sm text-left text-gray-500 table-fixed">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-          <tr class="text-center">
-            <th class="w-1/4 px-6 py-3 text-left">Doelstelling</th>
-            <th class="px-6 py-3">Richting</th>
-            <th class="px-6 py-3">Status</th>
-            <th class="px-6 py-3">Verified</th>
-            <th class="px-6 py-3">OPO/Project</th>
-            <th class="px-6 py-3">Bewijs</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
+      
+      <!-- Table Section -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-2xl shadow-[#00293F]/15 lg:mx-auto">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-500 table-fixed">
+            <thead class="text-xs text-white uppercase bg-gradient-to-r from-[#00293F] to-[#004165]">
+              <tr class="text-center">
+                <th class="w-2/5 px-6 py-4 text-left font-bold">Learning Goal</th>
+                <th class="px-6 py-4 font-bold">Track</th>
+                <th class="px-6 py-4 font-bold">Status</th>
+                <th class="px-6 py-4 font-bold">Verified</th>
+                <th class="px-6 py-4 font-bold">OPO/Project</th>
+                <th class="px-6 py-4 font-bold">Evidence</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody" class="divide-y divide-gray-100">
 
-        </tbody>
-      </table>
-    </div>
-    <div id="model" class="hidden fixed justify-center items-center bg-black/50 w-full h-full z-10 top-0">
-      <div class="bg-white p-6 rounded-lg relative w-2/4 max-h-[75%] overflow-y-auto">
-        <div class="flex justify-center items-center flex-col flex-wrap">
-          <h1 id="modelTitle" class="text-2xl font-bold underline"></h1>
-          <button onclick="closeModel()"
-            class="absolute font-bold text-red-500 right-1 top-1 px-2 py-1 rounded-lg text-xl">X</button>
-          <p id="modelText" class="w-full break-words pt-6"></p>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+    
+    <!-- Modal -->
+    <div id="model" class="hidden fixed justify-center items-center bg-black/60 w-full h-full top-0 backdrop-blur-sm">
+      <div class="bg-white rounded-2xl relative w-11/12 md:w-2/4 max-h-[80%] overflow-hidden shadow-2xl">
+        <div class="bg-gradient-to-r from-[#00293F] to-[#004165] px-6 py-4">
+          <h1 id="modelTitle" class="text-2xl font-bold text-white"></h1>
+          <button onclick="closeModel()"
+            class="absolute font-bold text-white hover:text-red-300 right-4 top-4 px-3 py-1 rounded-lg text-2xl transition-colors duration-200">×</button>
+        </div>
+        <div class="p-6 overflow-y-auto max-h-[calc(80vh-80px)]">
+          <p id="modelText" class="w-full break-words text-gray-700 leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+    
     <script src="index.js"></script>
   </body>
 
