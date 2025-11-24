@@ -73,21 +73,21 @@
 
 #### Modify Learning Goals
 
-1. Go to [doelstellingen.js](doelstellingen.js) and find the learning goal you want to modify.
+1. Go to [learninggoals.js](learninggoals.js) and find the learning goal you want to modify.
 2. Change the following information:
 
    ```json
    "status": "", -- See different statuses below
    "verified": "", -- ONLY FOR COACHES
    "project": "", -- Project or course
-   "bewijs": "" -- Text with evidence of the achieved learning goal, more info below
+   "evidence": "" -- Text with evidence of the achieved learning goal, more info below
    ```
 
    - status:
      - td &rarr; To Do
      - ip &rarr; In Progress
      - d &rarr; Done
-   - bewijs (evidence):
+   - evidence:
      - You can also add links using `<a href='<FILE_OR_LINK>' target='_blank'><Text></a>`
        - `<Text>` &rarr; The content you want to display.
        - `<FILE_OR_LINK>` &rarr; Link or file behind it.
@@ -95,8 +95,8 @@
        ![assetsFolder](assets/README/assetsFolder.png)
        - If you want an accordion for more overview in the evidence, you can use this function: `makeAccordion()`. More info in the example.
          ![accordion](assets/README/accordion.png)
-   - **Link example:** `<a href='assets/1.4/bewijs.pdf' target='_blank'>1.4</a>`
-     - This is a link to `bewijs.pdf` under `assets`.
+   - **Link example:** `<a href='assets/1.4/evidence.pdf' target='_blank'>1.4</a>`
+     - This is a link to `evidence.pdf` under `assets`.
    - **Accordion example:**
 
      - Create a new `const` variable in the [accordion.js](accordion.js) file like below.
@@ -131,7 +131,7 @@
      - Now you can use this in evidence.
      - e.g.:
        ```js
-       bewijs: `${makeAccordion(projectInfo)} Other text afterwards..`;
+       evidence: `${makeAccordion(projectInfo)} Other text afterwards..`;
        ```
      - You can still add links or photos via HTML code.
 
@@ -145,8 +145,8 @@
 
 #### Verify Learning Goal (Coaches)
 
-- Open the doelstellingen file on GitHub.
-  ![edit doelstellingen](assets/README/editDoelstellingen.png)
+- Open the learninggoals file on GitHub.
+  ![edit learninggoals](assets/README/editDoelstellingen.png)
 - Click on ![edit icon](assets/README/editIcon.png).
   ![edit button](assets/README/editButton.png)
 - Find the learning goal (CTRL+F also works).

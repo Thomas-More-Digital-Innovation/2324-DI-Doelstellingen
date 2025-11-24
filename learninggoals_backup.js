@@ -1,4 +1,4 @@
-const doelstellingen = {
+const learningGoals = {
   "1 Analysis": {
     "1.1 You identify functional requirements and translate these into standardised conceptual models (use case diagram, data model) taking into account the business context. ": {
       "type": [
@@ -492,7 +492,8 @@ const doelstellingen = {
     "5.2 You convey IT knowledge tailored to the audience's prior knowledge": {
       "type": [
         "CCS",
-        "APPAI, DI"
+        "APP","AI", 
+        "DI"
       ],
       "status": "",
       "verified": "",
@@ -502,7 +503,8 @@ const doelstellingen = {
     "5.3 You present your online portfolio, according to your personal brand, to a limited audience": {
       "type": [
         "CCS",
-        "APPAI, DI"
+        "APP","AI", 
+        "DI"
       ],
       "status": "",
       "verified": "",
@@ -511,7 +513,8 @@ const doelstellingen = {
     },
     "5.4 You make an ethical analysis in an IT context, weighing up interests and weighing up values and norms that apply in society": {
       "type": [
-        "APPAI, DI"
+        "APP","AI", 
+        "DI"
       ],
       "status": "",
       "verified": "",
@@ -1476,7 +1479,8 @@ const doelstellingen = {
     },
     "10.10 You create a design based on the identified requirements": {
       "type": [
-        "APPAI, DI"
+        "APP","AI", 
+        "DI"
       ],
       "status": "",
       "verified": "",
@@ -1485,7 +1489,8 @@ const doelstellingen = {
     },
     "10.11 You build a proof of concept, based on the design, that meets the client's expectations": {
       "type": [
-        "APPAI, DI"
+        "APP","AI", 
+        "DI"
       ],
       "status": "",
       "verified": "",
@@ -1494,7 +1499,8 @@ const doelstellingen = {
     },
     "10.12 You build a proof of concept according to the imposed best practices and technical specifications": {
       "type": [
-        "APPAI, DI"
+        "APP","AI", 
+        "DI"
       ],
       "status": "",
       "verified": "",

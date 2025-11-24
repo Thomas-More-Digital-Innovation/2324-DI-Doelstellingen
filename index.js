@@ -6,7 +6,7 @@ const states = {
 };
 
 const statesSelect = document.getElementById("states");
-const richtingenSelect = document.getElementById("richtingen");
+const tracksSelect = document.getElementById("tracks");
 const search = document.getElementById("search");
 const tableBody = document.getElementById("tableBody");
 const model = document.getElementById("model");
@@ -19,7 +19,7 @@ window.onkeyup = (e) => { if (e.key == "Escape") closeModel() };
 model.onclick = (e) => { if (e.target == model) closeModel() };
 
 search.oninput = checkFilters;
-richtingenSelect.onchange = checkFilters;
+tracksSelect.onchange = checkFilters;
 statesSelect.onchange = checkFilters;
 
 function checkFilters() {
@@ -33,11 +33,11 @@ function checkFilters() {
         passesFilter = false;
       } else { passesFilter = true; break; }
     }
-    const richtingenSelectValue = richtingenSelect.value;
+    const tracksSelectValue = tracksSelect.value;
     const statesSelectValue = statesSelect.value;
-    if (richtingenSelectValue != "ALLES") {
+    if (tracksSelectValue != "ALLES") {
       const types = tr.children[1].innerText.split(", ");
-      if (!types.includes(richtingenSelectValue) && !types.includes('ALLES')) passesFilter = false;
+      if (!types.includes(tracksSelectValue) && !types.includes('ALLES')) passesFilter = false;
     };
     if (statesSelectValue != "n") {
       if (!tr.children[2].innerText.includes(states[statesSelectValue]["label"])) {
@@ -89,7 +89,7 @@ function checkFilters() {
 
 function generate() {
   statesSelect.innerHTML = "";
-  richtingenSelect.innerHTML = "";
+  tracksSelect.innerHTML = "";
   tableBody.innerHTML = "";
   let countTodo = 0;
   let countDone = 0;
@@ -97,7 +97,7 @@ function generate() {
   let countVerified = 0;
   for (const [k, v] of Object.entries(states)) { k == "n" ? statesSelect.innerHTML += `<option value="${k}" selected>${v["label"]}</option>` : statesSelect.innerHTML += `<option value="${k}">${v["label"]}</option>`; }
   let r = [];
-  for (const [a, b] of Object.entries(doelstellingen)) {
+  for (const [a, b] of Object.entries(learningGoals)) {
     const categoryId = a.replace(/\s+/g, '-');
     tableBody.innerHTML += `
     <tr class="category-header cursor-pointer hover:bg-gray-300" data-category="${categoryId}">
@@ -136,7 +136,7 @@ function generate() {
         <td class="px-6 py-4">${status}</td>
         <td class="px-6 py-4">${d["verified"] || ""}</td>
         <td class="px-6 py-4">${d["project"] || ""}</td>
-        <td class="px-6 py-4">${d["bewijs"] ? `<button onclick="openModel(${c.split(" ")[0]}, \`${d["bewijs"]}\`)" class="hover:filter hover:brightness-50"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#2563eb" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg></button>` : ""}</td>
+        <td class="px-6 py-4">${d["evidence"] ? `<button onclick="openModel(${c.split(" ")[0]}, \`${d["evidence"]}\`)" class="hover:filter hover:brightness-50"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#2563eb" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg></button>` : ""}</td>
       </tr>
       `;
     }
@@ -232,7 +232,7 @@ function generate() {
   const ctx = document.getElementById('chart');
   Chart.register(ChartDataLabels);
   new Chart(ctx, config);
-  for (const v of r) { v == "ALLES" ? richtingenSelect.innerHTML += `<option value="${v}" selected>${v}</option>` : richtingenSelect.innerHTML += `<option value="${v}">${v}</option>`; }
+  for (const v of r) { v == "ALLES" ? tracksSelect.innerHTML += `<option value="${v}" selected>${v}</option>` : tracksSelect.innerHTML += `<option value="${v}">${v}</option>`; }
   
   // Add accordion functionality
   setupAccordion();
